@@ -52,10 +52,10 @@ RENAME tbl_clientes;
 
 
 Manipulacion de datos 
-C
+C INSERT
 R
-U 
-D
+U UPDATE
+D DELETE
 
 Insertar base de datos 
 INSERT INTO tabla (columna_1.columna_2.,.,.,);
@@ -68,3 +68,42 @@ VALUES ('Juanse', 'Sepulveda', 'juanse@gmail.com', '2001-02-14', '3003564589', '
 
 Multiples datos 
 VALUES (valor_1,valor_2,.,.,),
+
+
+Actualizar informacion
+
+UPDATE nombre_tabla 
+SET columna_1 = valor_1
+    columna_2 = valor_2
+
+
+
+WHERE  condicion 
+        id_cliente = 1234
+            1   = falso
+            2   = falso
+            3   = falso
+            1234 = 
+
+ejemplo:
+
+UPDATE tbl_clientes 
+SET ciudad = 'Cali'
+WHERE id_cliente = 2;
+
+ejemplo 2
+
+UPDATE tbl_clientes 
+SET nombre = 'Goku'
+WHERE id_cliente = 3;
+
+
+Eliminar DATEFROMPARTS
+
+DELETE from nombre_tabla 
+WHERE condicion 
+
+ejemplo:1
+
+DELETE FROM tbl_clientes
+WHERE id_cliente = 3
