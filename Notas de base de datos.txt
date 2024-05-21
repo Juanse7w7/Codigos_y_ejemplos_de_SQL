@@ -1,0 +1,42 @@
+Unidad N- Lenguaje estruturado de consulta
+SQL ---> Relacional
+MySQL  ---> apache
+            XAMPP
+            Servidor
+            
+Lenguaje de matipulacion de datos
+(C: Crear
+R:Leer
+U:Actualizar
+D:Eliminar
+)
+
+
+Lenguaje definicion datos 
+(
+crear 
+Actualizar (base
+             tablas ): Columnas,nombres, tipos de datos
+Eliminar
+
+
+)
+
+
+Lenguaje control datos
+
+
+Creación de una base de datos:
+CREATE DATABASE  nombre_base_datos
+DROP DATABASE nombre_base_datos
+CREATE TABLE nombre:_tabla ()
+EJEMPLO:
+
+CREATE TABLE clientes(
+	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    correo VARCHAR(100) NOT NULL UNIQUE,
+    fecha_nacimiento DATE NOT NULL,
+    celular VARCHAR(20)
+);
