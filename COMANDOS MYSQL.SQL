@@ -53,7 +53,7 @@ RENAME tbl_clientes;
 
 Manipulacion de datos 
 C INSERT
-R
+R SELECT
 U UPDATE
 D DELETE
 
@@ -61,6 +61,8 @@ Insertar base de datos
 INSERT INTO tabla (columna_1.columna_2.,.,.,);
 VALUES (valor_1,valor_2.,.,.,);
 ejemplo: insertar informacion en las tablas 
+
+
 INSERT INTO tbl_clientes (nombre, apellido, correo, fecha_nacimiento, celular, ciudad)
 VALUES ('Juanse', 'Sepulveda', 'juanse@gmail.com', '2001-02-14', '3003564589', 'Bello'),
 ('Pepe', 'Perez', 'Pepito@gmail.com', '2000-05-23', '300024568', 'Bello'),
@@ -107,3 +109,46 @@ ejemplo:1
 
 DELETE FROM tbl_clientes
 WHERE id_cliente = 3
+
+
+
+Recuperar datos o consultas(READ)
+
+SELECT  columna_1, columna_2 FROM nombre_tabla
+                * --> todos 
+ejemplo: Con todos los de la lista
+
+SELECT nombre, apellido, celular FROM tbl_clientes
+
+ejemplo : con el filtro 
+
+SELECT nombre, apellido, celular FROM tbl_clientes
+WHERE id_cliente = 4
+
+SELECT nombre, apellido, celular FROM tbl_clientes
+WHERE ciudad = 'Medellín'   |los caracteres simpre va en comillas ''|
+
+SELECT nombre, apellido, celular, ciudad FROM tbl_clientes
+WHERE ciudad = 'Cali' AND fecha_nacimiento > '2000-01-01'
+
+de forma ordenada en asendente 
+
+SELECT * FROM tbl_clientes ORDER BY fecha_nacimiento ASC;
+SELECT * FROM tbl_clientes ORDER BY fecha_nacimiento DESC;
+
+
+contador  de cantidad de datos 
+
+COUNT
+COUNT(columna)
+
+SELECT COUNT(columna) AS alias FROM nombre_tabla WHERE condicion 
+SELECT * FROM nombre_tabla 
+
+SELECT COUNT(ciudad) AS PersonasXciudad FROM tbl_clientes WHERE ciudad = 'Medellín';
+
+
+
+
+
+
