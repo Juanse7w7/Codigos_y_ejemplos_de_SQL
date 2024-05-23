@@ -148,7 +148,37 @@ SELECT * FROM nombre_tabla
 SELECT COUNT(ciudad) AS PersonasXciudad FROM tbl_clientes WHERE ciudad = 'Medellín';
 
 
+SUM
+SUM (columna_numerica)
+
+SELECT SUM(columna_#) AS alias FROM nombre_tabla
+
+SELECT SUM(id_cliente) AS suma_cedulas FROM tbl_clientes;
+
+ejemplo con venta total de MES
+
+SELECT SUM(precio_total) AS total_ventas FROM toltal:factura WHERE fecha >= '2024-01-01' AND fecha <= '2024-01-31'
 
 
+Promedio ( AVG )
+AVG(columna_numerica)
+
+SELECT AVG(columna_numerica) AS alias FROM nombre_tabla WHERE condicion
+
+SELECT AVG(id_cliente) AS promedio_cedulas FROM tbl_clientes;
 
 
+MIN --> MINIMO 
+MIN(columna_numerica)
+
+SELECT MIN(columna_numerica) AS ALIAS FROM nombre_tabla 
+
+SELECT MIN(id_cliente) AS ID_MENOR FROM tbl_clientes;
+
+MAX
+MAX(columna_numerica) 
+
+
+SELECT MAX(columna_numerica) AS ALIAS FROM nombre_tabla
+
+SELECT MAX(id_cliente) AS ID_MAYOR FROM tbl_clientes;
