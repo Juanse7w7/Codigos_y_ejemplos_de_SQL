@@ -182,3 +182,27 @@ MAX(columna_numerica)
 SELECT MAX(columna_numerica) AS ALIAS FROM nombre_tabla
 
 SELECT MAX(id_cliente) AS ID_MAYOR FROM tbl_clientes;
+
+
+GROUP BY (agrupar por)
+
+SELECT columna_agrupacion Fucion_agrupar(columna) FROM nombre_tabla GROUP BY columna_agrupacion;
+
+
+ejemplo: 
+
+
+SELECT ciudad, COUNT(*) AS PersonaXCiudad FROM tbl_clientes GROUP BY ciudad;
+
+
+HAVING 
+
+SELECT columna_agrupacion, Fucion_agrupar( Numerico, SUM, AVG, MIN, MAX)(columna_numerica) AS alias FROM nombre_tabla GROUP BY columna_agrupacion HAVING condicion; 
+
+ejemplo;
+
+SELECT ciudad, SUM(id_cliente) AS Suma_idcliente FROM tbl_clientes GROUP BY ciudad;
+
+SELECT ciudad, SUM(id_cliente) AS Suma_idcliente FROM tbl_clientes GROUP BY ciudad HAVING Suma_idcliente > 25
+
+
