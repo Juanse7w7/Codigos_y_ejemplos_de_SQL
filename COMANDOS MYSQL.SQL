@@ -206,3 +206,56 @@ SELECT ciudad, SUM(id_cliente) AS Suma_idcliente FROM tbl_clientes GROUP BY ciud
 SELECT ciudad, SUM(id_cliente) AS Suma_idcliente FROM tbl_clientes GROUP BY ciudad HAVING Suma_idcliente > 25
 
 
+
+
+Union entre -- Get a list of tables and views in the current database
+SELECT table_catalog [database], table_schema [schema], table_name name, table_type type
+FROM INFORMATION_SCHEMA.TABLES
+INNER JOIN
+SELECT * FROM tabla_1 INNER JOIN tabla_2 INNER JOIN ... 
+ON  tabla_1  PK = tabla_2 FK 
+AND ...;
+
+ejemplo: con toda la infomacion y se duplica 
+
+SELECT * FROM tbl_estudiantes 
+INNER JOIN tbl_matricula 
+INNER JOIN tbl_cursos 
+ON tbl_estudiantes.id_estudiantes = tbl_matricula.id_estudiantes 
+AND tbl_matricula.id_curso = tbl_cursos.id_curso;
+
+ejemplo: con las tabla organizada y sin informacion duplicada 
+
+SELECT tbl_estudiantes.id_estudiantes,tbl_estudiantes.nombre,tbl_estudiantes.apellido,tbl_estudiantes.correo,
+tbl_matricula.id_matricula,tbl_matricula.fecha_matricula,tbl_cursos.id_curso,tbl_cursos.nombre,tbl_cursos.profesor
+FROM tbl_estudiantes 
+INNER JOIN tbl_matricula 
+INNER JOIN tbl_cursos 
+ON tbl_estudiantes.id_estudiantes = tbl_matricula.id_estudiantes
+AND tbl_matricula.id_curso = tbl_cursos.id_curso;
+
+ejemplo: con la condicion de busqueda
+
+SELECT tbl_estudiantes.id_estudiantes,tbl_estudiantes.nombre,tbl_estudiantes.apellido,tbl_estudiantes.correo,
+tbl_matricula.id_matricula,tbl_matricula.fecha_matricula,tbl_cursos.id_curso,tbl_cursos.nombre,tbl_cursos.profesor
+FROM tbl_estudiantes 
+INNER JOIN tbl_matricula 
+INNER JOIN tbl_cursos 
+ON tbl_estudiantes.id_estudiantes = tbl_matricula.id_estudiantes
+AND tbl_matricula.id_curso = tbl_cursos.id_curso
+WHERE tbl_estudiantes.id_estudiantes = 4;
+
+
+LAS TABLAS SE PUEDE RENOMBRAR 
+tabla_1= A
+tabla_2 = B
+
+
+SELECT A.id_estudiantes,A.nombre,A.apellido,A.correo,
+B.id_matricula,B.fecha_matricula,C.id_curso,C.nombre,C.profesor
+FROM tbl_estudiantes A
+INNER JOIN tbl_matricula B
+INNER JOIN tbl_cursos C
+ON A.id_estudiantes = B.id_estudiantes
+AND B.id_curso = C.id_curso
+WHERE A.id_estudiantes = 3;
